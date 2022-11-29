@@ -1,29 +1,26 @@
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Camunda.Api.Client.ProcessInstance;
-using Refit;
+using FluentAssertions;
+using NUnit.Framework;
 using RichardSzalay.MockHttp;
-using Xunit;
 
 namespace Camunda.Api.Client.Tests
 {
     public class ProcessInstanceTests
     {
-        [Fact]
+        [Test]
         public async Task GetList()
         {
             var mockHttp = new MockHttpMessageHandler();
 
-            mockHttp.Expect(HttpMethod.Post, "http://localhost:8080/engine-rest")
+            mockHttp.Expect(HttpMethod.Post, "http://localhost:31020/engine-rest/*")
                 .Respond(HttpStatusCode.OK, "text/html", "OK");
 
+            var client = CamundaClient.Create("http://localhost:31020/engine-rest");
+            var process = await client.ProcessDefinitions.GetStatistics(false);
 
-            var client = CamundaClient.Create("http://localhost:8080/engine-rest", mockHttp);
-            var process = await client.ProcessInstances.Query().List();
-
-            Assert.NotNull(process);
+            process.Should().NotBeNull();
         }
     }
 }
