@@ -1,12 +1,8 @@
-# Maintained Fork of [Camunda.Api.Client](https://github.com/jlucansky/Camunda.Api.Client)
-After [Jan Lucansky](https://github.com/jlucansky) stopped maintaining the orginal version we started maintaining our own fork.
-It is a drop-in-replacement for the original version.
-Just use Komsa.Camunda.Api.Client nuget package instead of Camunda.Api.Client.
+# Fork of [Camunda.Api.Client](https://github.com/jlucansky/Camunda.Api.Client) later forked here (https://github.com/komsa-ag/Camunda.Api.Client)
 
-# Camunda 7 REST API Client [![NuGet](https://img.shields.io/nuget/v/Camunda.Api.Client.svg)](https://www.nuget.org/packages/Komsa.Camunda.Api.Client)
+# Camunda 7 REST API Client (https://www.nuget.org/packages/MASTA.Camunda.Api.Client)
 Camunda REST API Client for .NET platform
-- [x] .NET Framework 4.6.1
-- [x] .NET Standard 2.0
+- [x] .NET Core 6
 
 ## Covered API
 Each part listed below is fully covered according to https://docs.camunda.org/manual/latest/reference/rest specification.
@@ -49,11 +45,11 @@ Each part listed below is fully covered according to https://docs.camunda.org/ma
 - [x] [Variable Instance](https://docs.camunda.org/manual/latest/reference/rest/variable-instance/)
 
 ## Install
-The Camunda REST API Client is available on [nuget.org](https://www.nuget.org/packages/Komsa.Camunda.Api.Client)
+The Camunda REST API Client is available on [nuget.org](https://www.nuget.org/packages/MASTA.Camunda.Api.Client)
 
 To install Camunda REST API Client, run the following command in the Package Manager Console
 ```
-PM> Install-Package Komsa.Camunda.Api.Client
+PM> Install-Package MASTA.Camunda.Api.Client
 ```
 
 ## Usage
